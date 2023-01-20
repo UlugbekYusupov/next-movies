@@ -13,7 +13,7 @@ export default function Home({ movies }) {
 }
 
 export async function getStaticProps() {
-  const response = await axios(server);
+  const response = await axios(`${server}?page=${1}&items=${20}`);
   const movies = response.data;
   return {
     props: {
