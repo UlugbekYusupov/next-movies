@@ -1,5 +1,4 @@
 import Image from "next/legacy/image";
-import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -15,11 +14,7 @@ const Hero = () => {
           Netflix Me
         </h1>
         <p className="text-gray-500">This is the test for Turon Telecom</p>
-        <Link href={""}>
-          <button className="bg-gray-700 text-white py-3 px-6 rounded text-small mt-4">
-            Go to GitHub
-          </button>
-        </Link>
+       
       </div>
     </div>
   );

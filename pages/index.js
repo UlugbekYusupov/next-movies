@@ -1,15 +1,23 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
 import Hero from "@/components/Hero";
+import Movies from "@/components/Movies";
+import { server } from "@/config";
+import axios from "axios";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function Home({ movies }) {
   return (
-    <div>
-      <Hero/>
+    <div className="bg-gray-700">
+      <Hero />
+      <Movies movies={movies.data.movieList} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const response = await axios(server);
+  const movies = response.data;
+  return {
+    props: {
+      movies,
+    },
+  };
 }
