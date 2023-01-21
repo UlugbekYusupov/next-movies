@@ -10,7 +10,7 @@ function MovieCard({ movie }) {
           width={300}
           height={400}
           layout={"responsive"}
-          className="rounded-t-2xl hover:opacity-80 transition duration-200 ease-in-out"
+          className="rounded-t-2xl hover:brightness-125 transition duration-200 ease-in-out"
         />
         <div className="p-4 py-2">
           <h1 className="text-gray-700 font-bold text-lg text-ellipsis truncate">

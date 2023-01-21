@@ -1,10 +1,23 @@
 import { server } from "@/config";
 import axios from "axios";
 import { movieDetail } from "@/config";
+import Image from "next/legacy/image";
 
 function Movie({ movie }) {
   console.log(movie);
-  return <div>{movie.title}</div>;
+  return (
+    <div className="container max-w-4xl mx-auto pt-6">
+      <div className="px-3 text-center">
+        <Image
+          src={movie.poster}
+          width={1000}
+          height={600}
+          className="rounded-md"
+        />
+        <h1></h1>
+      </div>
+    </div>
+  );
 }
 
 export async function getStaticProps(context) {
