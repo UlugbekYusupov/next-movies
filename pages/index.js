@@ -7,8 +7,8 @@ import { paginate } from "@/utils/paginate";
 
 import { useState, useEffect } from "react";
 
-let globalCurrentPage;
-const pageSize = 10;
+export let globalCurrentPage;
+export const pageSize = 10;
 
 export default function Home({ movies }) {
   const [currentPage, setCurrentPage] = useState(1);

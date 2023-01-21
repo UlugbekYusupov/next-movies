@@ -2,6 +2,7 @@ import { server } from "@/config";
 import axios from "axios";
 import { movieDetail } from "@/config";
 import Image from "next/legacy/image";
+import { globalCurrentPage } from "@/pages";
 
 function Movie({ movie }) {
   console.log(movie);
@@ -45,7 +46,9 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const response = await axios(`${server}?page=${1}&items=${10}`);
+  const response = await axios(
+    `${server}?page=${globalCurrentPage}&items=${266}`
+  );
   const movies = response.data.data.movieList;
   const paths = movies.map((movie) => ({
     params: { id: movie.id.toString() },
