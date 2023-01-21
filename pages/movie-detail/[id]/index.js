@@ -14,7 +14,20 @@ function Movie({ movie }) {
           height={600}
           className="rounded-md"
         />
-        <h1></h1>
+        <h1>
+          <span className="font-bold text-lg">Name:</span> {movie.title}
+        </h1>
+        <p>
+          <span className="font-bold text-lg">Slogan: </span> {movie.slogan}
+        </p>
+        <p>
+          <span className="font-bold text-lg">Release Year: </span>
+          {movie.year}
+        </p>
+        <p>
+          <span className="font-bold text-lg">Budget: </span>
+          {movie.budget}
+        </p>
       </div>
     </div>
   );
@@ -32,7 +45,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const response = await axios(`${server}?page=${1}&items=${20}`);
+  const response = await axios(`${server}?page=${1}&items=${10}`);
   const movies = response.data.data.movieList;
   const paths = movies.map((movie) => ({
     params: { id: movie.id.toString() },
